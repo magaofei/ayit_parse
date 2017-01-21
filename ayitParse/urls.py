@@ -15,9 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django_web.views import json_info
+from django_web.views import import_json_info
+from django_web.views import science_json_info
+from django_web.views import trends_json_info
+from django_web.views import affiche_json_info
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^json/', json_info)
+    url(r'^json/affiche/', affiche_json_info),
+    url(r'^json/import/', import_json_info),
+    url(r'^json/science/', science_json_info),
+    url(r'^json/trends/', trends_json_info)
 ]
